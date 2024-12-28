@@ -1,0 +1,51 @@
+#include <stdio.h>
+
+int main() {
+    int choice;
+    float temperature, convertedTemperature;
+
+    printf("********** Temperature Conversion **********\n");
+    printf("1. Celsius to Fahrenheit\n");
+    printf("2. Fahrenheit to Celsius\n");
+    printf("3. Celsius to Kelvin\n");
+    printf("4. Kelvin to Celsius\n");
+    printf("5. Fahrenheit to Kelvin\n");
+    printf("6. Kelvin to Fahrenheit\n");
+    printf("Enter your choice (1-6): ");
+    scanf("%d", &choice);
+
+    if (choice >= 1 && choice <= 6) {
+        printf("Enter the temperature to convert: ");
+        scanf("%f", &temperature);
+
+        if (choice == 1) {
+            // Celsius to Fahrenheit
+            convertedTemperature = (temperature * 9 / 5) + 32;
+            printf("%.2f Celsius = %.2f Fahrenheit\n", temperature, convertedTemperature);
+        } else if (choice == 2) {
+            // Fahrenheit to Celsius
+            convertedTemperature = (temperature - 32) * 5 / 9;
+            printf("%.2f Fahrenheit = %.2f Celsius\n", temperature, convertedTemperature);
+        } else if (choice == 3) {
+            // Celsius to Kelvin
+            convertedTemperature = temperature + 273.15;
+            printf("%.2f Celsius = %.2f Kelvin\n", temperature, convertedTemperature);
+        } else if (choice == 4) {
+            // Kelvin to Celsius
+            convertedTemperature = temperature - 273.15;
+            printf("%.2f Kelvin = %.2f Celsius\n", temperature, convertedTemperature);
+        } else if (choice == 5) {
+            // Fahrenheit to Kelvin
+            convertedTemperature = (temperature - 32) * 5 / 9 + 273.15;
+            printf("%.2f Fahrenheit = %.2f Kelvin\n", temperature, convertedTemperature);
+        } else if (choice == 6) {
+            // Kelvin to Fahrenheit
+            convertedTemperature = (temperature - 273.15) * 9 / 5 + 32;
+            printf("%.2f Kelvin = %.2f Fahrenheit\n", temperature, convertedTemperature);
+        }
+    } else {
+        printf("Invalid choice! Please run the program again.\n");
+    }
+
+    return 0;
+}
